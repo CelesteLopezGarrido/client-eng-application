@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: client-eng-application
+    app.kubernetes.io/instance: client-eng-application-instance
+    app.kubernetes.io/name: client-eng-application
+  name: client-eng-application
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 3000
+  selector:
+    app.kubernetes.io/instance: client-eng-application-app-instance
+    app.kubernetes.io/name: client-eng-application
+  sessionAffinity: None
+  type: ClusterIP
