@@ -5,6 +5,6 @@ resources:
 - service.yaml
 - route.yaml
 commonLabels:
-  app: client-eng-application
+  app: client-eng-application-app
   app.kubernetes.io/instance: client-eng-application-instance
   app.kubernetes.io/name: client-eng-application
