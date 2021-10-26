@@ -2,25 +2,25 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: hi
-    app.kubernetes.io/instance: hi-app-instance
-    app.kubernetes.io/name: hi
+    app: client-eng-application
+    app.kubernetes.io/instance: client-eng-application-app-instance
+    app.kubernetes.io/name: client-eng-application
     app.openshift.io/runtime: js
-  name: hi
+  name: client-eng-application
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app.kubernetes.io/instance: hi-instance
-      app.kubernetes.io/name: hi
+      app.kubernetes.io/instance: client-eng-application-instance
+      app.kubernetes.io/name: client-eng-application
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app.kubernetes.io/instance: hi-instance
-        app.kubernetes.io/name: hi
+        app.kubernetes.io/instance: client-eng-application-instance
+        app.kubernetes.io/name: client-eng-application
     spec:
       containers:
         - env:
@@ -28,7 +28,7 @@ spec:
             - name: PROTOCOLS
             - name: LOG_LEVEL
               value: debug
-          image: quay.io/celestelopezgarrido/hi
+          image: quay.io/celestelopezgarrido/client-eng-application
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
@@ -39,7 +39,7 @@ spec:
             periodSeconds: 10
             successThreshold: 1
             timeoutSeconds: 1
-          name: hi
+          name: client-eng-application
           ports:
             - containerPort: 3000
               name: http
