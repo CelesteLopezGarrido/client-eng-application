@@ -17,7 +17,6 @@ spec:
       app.kubernetes.io/name: client-eng-application
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app.kubernetes.io/instance: client-eng-application-instance
         app.kubernetes.io/name: client-eng-application
