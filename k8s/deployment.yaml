@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: client-eng-application
-    app.kubernetes.io/instance: client-eng-application-app-instance
+    app.kubernetes.io/instance: client-eng-application-instance
     app.kubernetes.io/name: client-eng-application
     app.openshift.io/runtime: js
   name: client-eng-application
