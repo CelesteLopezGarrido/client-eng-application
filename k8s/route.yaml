@@ -6,6 +6,8 @@ metadata:
     openshift.io/host.generated: "true"
   name: client-eng-application
 spec:
+  port:
+    targetPort: 3000
   tls:
     termination: edge
   to:
