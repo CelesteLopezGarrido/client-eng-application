@@ -9,4 +9,4 @@ RUN npm run build
 #Segunda Etapa
 FROM nginx:1.17.1-alpine
 COPY --from=build-step /app/dist/client-eng-application /usr/share/nginx/html
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["sudo nginx", "-g", "daemon off;"]
