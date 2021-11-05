@@ -6,6 +6,7 @@ COPY package.json /app
 RUN npm install
 COPY . /app
 RUN npm run build
+
 #Segunda Etapa
 FROM nginxinc/nginx-unprivileged:latest
 COPY --from=build-step /app/dist/client-eng-application /usr/share/nginx/html
